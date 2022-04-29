@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/issues"
   },
-  "homepage": "https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API#readme"
+  "homepage": "https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API#readme",
+  "dependencies": {
+    "jest": "^26.0.0"
+  }
 }
