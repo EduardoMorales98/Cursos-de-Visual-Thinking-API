@@ -9,4 +9,9 @@ describe("Test para StudentController",()=>{
         const studentsWithCertification=StudentController.getStudentsEmailsWithCertification();
         expect(studentsWithCertification.length).toBe(29);
     });
+
+    test("3. Consultar todos los estudiantes que tengan credits mayor a 500",()=>{
+        const studentsWithCreditsOver500=StudentController.getStudentsWithCreditsOver500()
+        expect(studentsWithCreditsOver500.length).toBe(51)
+    });
 });
