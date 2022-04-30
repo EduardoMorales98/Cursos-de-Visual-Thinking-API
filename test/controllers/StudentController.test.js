@@ -7,6 +7,6 @@ describe("Test para StudentController",()=>{
 
     test("2. Consultar los emails de todos los estudiantes que tengan certificación haveCertification",()=>{
         const studentsWithCertification=StudentController.getStudentsEmailsWithCertification();
-        expect(studentsWithCertification.length).toBe(51);
+        expect(studentsWithCertification.length).toBe(29);
     });
 });
