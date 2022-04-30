@@ -1,9 +1,10 @@
-const StudentService=require("./../../lib/services/StudentService.js");
+const StudentService=require("./../../lib/services/StudentService.js")
+const Reader=require("./../../lib/utils/Reader.js")
 
 describe("Test para StudentService",()=>{
-    test("1. Consultar los emails de todos los estudiantes que tengan certificación haveCertification",()=>{
+    test("2. Consultar los emails de todos los estudiantes que tengan certificación haveCertification",()=>{
         const students=Reader.readJsonFile("./test/data/visualpartners_1.json")
-        const studentEmailsWithCertification=StudentService.getStudentsEmailsWithCertification(students);
-        expect(studentEmailsWithCertification.length).toBe(51);
+        const studentsEmailsWithCertification=StudentService.getStudentsEmailsWithCertification(students)
+        expect(studentsEmailsWithCertification.length).toBe(29)
     });
 });
