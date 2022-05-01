@@ -99,13 +99,28 @@ classDiagram
 ```
 
 ## Reader
-Esta clase se usa para leer el archivo [visualpartners.json](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/visualpartners.json), el cual contiene todos los datos que serán usados en la API. Tiene como parámetro **path**, que será la ruta en donde se encuentra nuestro archivo.
+
+| Método    | Parámetros | Función   |
+| -------  | ------   | -------  |
+|static readJsonFile()|path: ruta del archivo |Leer el archivo [visualpartners.json](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/visualpartners.json)|
 
 ## StudentService
-Esta clase contiene la lógica para obtener los datos esperados. Cuenta con dos métodos que corresponden con el cumplimiento de los requerimientos 2 y 3. Ambos reciben como parámetro **students**, que serán los datos provenientes de [visualpartners.json](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/visualpartners.json).
+
+| Método    | Parámetros | Función   |
+| -------  | ------   | -------  |
+|static getStudentsEmailsWithCertification()|students: datos provenientes de [visualpartners.json](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/visualpartners.json) |Obtener todos los estudiantes que tengan la certificación **haveCertification**.|
+| static getStudentsWithCreditsOver500()|students: datos provenientes de [visualpartners.json](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/visualpartners.json) |Obtener todos los estudiantes que tengan **credits** mayor a 500. |
 
 ## StudentController
-Esta clase es la que conecta a las dos anteriores con el servidor [server.js](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/lib/server.js). En esta se tienen tres métodos, el primero es **getAllStudents()**, que accede a todos los datos del archivo [visualpartners.json](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/visualpartners.json) mediante la clase [Reader.js](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/lib/utils/Reader.js). Este método es usado por los otros dos para mandar los datos a los dos métodos de la clase [StudentService](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/lib/services/StudentService.js), y de esta manera solo se mandaría a llamar estos tres métodos en el servidor para la API, comunicándose directamente con esta clase e indirectamente con las dos anteriormente mencionadas.
+| Método    | Parámetros | Función   |
+| -------  | ------   | -------  |
+|static getAllStudents()| |Obtener todos los estudiantes con todos sus campos por medio de la clase [Reader.js](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/lib/utils/Reader.js).|
+| static getStudentsEmailsWithCertification()| | Obtener todos los estudiantes que tengan la certificación **haveCertification** por medio de la clase [StudentService](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/lib/services/StudentService.js) y el método anterior.|
+| static getStudentsWithCreditsOver500()| | Obtener todos los estudiantes que tengan **credits** mayor a 500 por medio de la clase [StudentService](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/lib/services/StudentService.js) y el primer método. |
+
+
+
+Esta clase es la que conecta a las dos anteriores con el servidor [server.js](https://github.com/EduardoMorales98/Cursos-de-Visual-Thinking-API/blob/main/lib/server.js), y de esta manera solo se mandaría a llamar a estos tres métodos en el servidor para la API, comunicándose directamente con esta clase e indirectamente con las dos anteriormente mencionadas.
 
 # API
 
